@@ -14,7 +14,7 @@ const {
   hardRemoveConversation,
   restoreConversation,
 } = require("../controllers");
-const {GNS_SERVICES,ACTIONS} = require("../../models/typesAndEnums")
+const {SERVICES,ACTIONS} = require("../../models/typesAndEnums")
 const { enforceRbac } = require("../../common/middlewares/enforceRbac");
 /**
  * @swagger
@@ -66,7 +66,7 @@ const { enforceRbac } = require("../../common/middlewares/enforceRbac");
  */
 router.post("/", [
   enforceRbac({
-    service: GNS_SERVICES.CONVERSATIONS,
+    service: SERVICES.CONVERSATIONS,
     action: ACTIONS.CREATE,
   }),
 ], createConversation);
@@ -100,7 +100,7 @@ router.post("/", [
  */
 router.get("/", [
   enforceRbac({
-    service: GNS_SERVICES.CONVERSATIONS,
+    service: SERVICES.CONVERSATIONS,
     action: ACTIONS.READ,
   }),
 ], listConversations);
@@ -150,7 +150,7 @@ router.get("/", [
  */
 router.get("/:id", [
   enforceRbac({
-    service: GNS_SERVICES.CONVERSATIONS,
+    service: SERVICES.CONVERSATIONS,
     action: ACTIONS.READ,
   }),
 ], getConversation);
