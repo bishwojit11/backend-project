@@ -15,7 +15,11 @@ app.use(cors);
 app.use(secureQuery);
 app.use(globalLimiter);
 
+require("./startup/apiRoutes")(app);
+require("./startup/apiDocsRoutes")(app);
 
+app.use(errorHandler);
+actionOnUnhandled();
 app.get("/", (req, res) =>
   res.status(200).json({ message: "Active", details: {} })
 );
