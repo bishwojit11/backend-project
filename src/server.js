@@ -15,6 +15,7 @@ app.use(cors);
 app.use(secureQuery);
 app.use(globalLimiter);
 
+require("./startup/adminRoutes")(app);
 require("./startup/apiRoutes")(app);
 require("./startup/apiDocsRoutes")(app);
 

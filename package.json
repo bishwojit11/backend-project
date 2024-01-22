@@ -10,7 +10,7 @@
     "test": "env-cmd -f ./.env.test mocha",
     "migration:local": "cd src/migrations & node index.js"
   },
-  "author": "",
+  "author": "Bishwojit",
   "license": "ISC",
   "dependencies": {
     "@bull-board/express": "^3.10.7",
