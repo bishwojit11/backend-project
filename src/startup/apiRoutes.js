@@ -6,6 +6,7 @@ const router = express.Router();
 function getUserRouter() {
   router.use("/accounts", require("../accounts/routes"));
   router.use(userDeserialization);
+  router.use("/organisations", require("../organisations/routes"));
   
   return router;
 }
