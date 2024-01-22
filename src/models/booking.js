@@ -3,7 +3,7 @@ const { OrganisationsModel } = require("./organisations");
 const mongoosePaginate = require("mongoose-paginate-v2");
 const { softDeletePlugin } = require("./plugins/softDelete");
 const { UsersModel } = require("./users");
-const { GNS_SURVEY_SERVICES } = require("./typesAndEnums");
+const { SERVICES } = require("./typesAndEnums");
 const {orgDataPlugin} = require("./plugins/orgDataPlugin")
 const Schema = new mongoose.Schema(
   {
@@ -24,7 +24,7 @@ const Schema = new mongoose.Schema(
     services: [
       {
         type: String,
-        enum: Object.values(GNS_SURVEY_SERVICES),
+        enum: Object.values(SERVICES),
         required: true,
       },
     ],

@@ -17,7 +17,7 @@ const {
 } = require("../controllers");
 const { validate } = require("../../common/middlewares/validator");
 const validations = require("../validations");
-const { GNS_SERVICES, ACTIONS } = require("../../models/typesAndEnums");
+const { SERVICES, ACTIONS } = require("../../models/typesAndEnums");
 const { enforceRbac } = require("../../common/middlewares/enforceRbac");
 const validateBody = validate("body");
 
@@ -99,7 +99,7 @@ router.post(
   [
     [
       enforceRbac({
-        service: GNS_SERVICES.LOCATIONS,
+        service: SERVICES.LOCATIONS,
         action: ACTIONS.CREATE,
       }),
     ],
@@ -154,7 +154,7 @@ router.get(
   "/:id",
   [
     enforceRbac({
-      service: GNS_SERVICES.LOCATIONS,
+      service: SERVICES.LOCATIONS,
       action: ACTIONS.READ,
     }),
   ],
@@ -192,7 +192,7 @@ router.get(
   "/",
   [
     enforceRbac({
-      service: GNS_SERVICES.LOCATIONS,
+      service: SERVICES.LOCATIONS,
       action: ACTIONS.READ,
     }),
   ],
@@ -254,7 +254,7 @@ router.put(
   [
     [
       enforceRbac({
-        service: GNS_SERVICES.LOCATIONS,
+        service: SERVICES.LOCATIONS,
         action: ACTIONS.CREATE,
       }),
     ],
