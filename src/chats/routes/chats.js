@@ -61,7 +61,7 @@ const {
 } = require("../controllers");
 const { validate } = require("../../common/middlewares/validator");
 const validations = require("../validations");
-const {GNS_SERVICES,ACTIONS} = require("../../models/typesAndEnums")
+const {SERVICES,ACTIONS} = require("../../models/typesAndEnums")
 const { enforceRbac } = require("../../common/middlewares/enforceRbac");
 const validateBody = validate("body");
 
@@ -100,7 +100,7 @@ const validateBody = validate("body");
  */
 router.post("/", [[
   enforceRbac({
-    service: GNS_SERVICES.CHATS,
+    service: SERVICES.CHATS,
     action: ACTIONS.CREATE,
   }),
 ],validateBody(validations.createChatData)], createChat);
@@ -133,7 +133,7 @@ router.post("/", [[
  */
 router.get("/", [
   enforceRbac({
-    service: GNS_SERVICES.CHATS,
+    service: SERVICES.CHATS,
     action: ACTIONS.READ,
   }),
 ], listChats);
@@ -182,7 +182,7 @@ router.get("/", [
  */
 router.get("/:id", [
   enforceRbac({
-    service: GNS_SERVICES.CHATS,
+    service: SERVICES.CHATS,
     action: ACTIONS.READ,
   }),
 ], getChat);
