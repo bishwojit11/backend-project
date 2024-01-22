@@ -1,6 +1,7 @@
 module.exports = {
   ...require("./sessions"),
   ...require("./users"),
-  ...require("./organisations")
+  ...require("./organisations"),
+  ...require("./locations")
 
 }
