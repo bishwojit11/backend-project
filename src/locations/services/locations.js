@@ -55,7 +55,7 @@ class Location extends Manager {
   async softRemoveLocation(id) {
     const location = this.getLocation({ _id: id });
     if (
-      location.status === "GNS Approved" ||
+      location.status === "Approved" ||
       location.status === "Survey Complete"
     )
       throw new APIError(
@@ -82,13 +82,13 @@ class Location extends Manager {
     }
 
     if (
-      location.status === "GNS Approved" ||
+      location.status === " Approved" ||
       location.status === "Survey Complete"
     )
       throw new APIError(
         ReasonPhrases.BAD_REQUEST,
         StatusCodes.BAD_REQUEST,
-        "Cannot delete gns approved or complete survey."
+        "Cannot delete  approved or complete survey."
       );
     if (location) {
       await this.Location.deleteOne({ _id: id });

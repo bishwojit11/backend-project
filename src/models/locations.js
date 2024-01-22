@@ -21,8 +21,8 @@ const Schema = new mongoose.Schema({
     enum: Object.values(LOCATION_STATUS),
   },
 
-  //location status [Stale, Unbooked, Requested Survey, GNS Approved, Survey Complete, ]
-  // not permitted to delete gns approved and survey complete
+  //location status [Stale, Unbooked, Requested Survey,  Approved, Survey Complete, ]
+  // not permitted to delete  approved and survey complete
 });
 Schema.plugin(softDeletePlugin);
 Schema.plugin(orgDataPlugin);
